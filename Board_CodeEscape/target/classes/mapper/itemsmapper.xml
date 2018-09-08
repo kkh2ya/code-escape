@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oda.giri1.dao.ItemsDAO">
+
+<!-- 아이디와 비밀번호를 받아서 일치하는 객체를 반환해 준다. -->
+<select id="findItems" resultType="Items" parameterType="Items">
+  	SELECT
+  	slot1,
+  	slot2,
+  	slot3,
+  	slot4,
+  	slot5
+  	from items
+  	WHERE userid = #{userid}
+</select>
+
+<update id="updateItems" parameterType="Items">
+  	update Items set 
+  	slot1 = #{slot1},
+  	slot2 = #{slot2},
+  	slot3 = #{slot3},
+  	slot4 = #{slot4},
+  	slot5 = #{slot5}
+  	where userid = #{userid}
+</update>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+      <typeAlias type="sesoc.global.vo.Board1" alias="Board1"/>
+      <typeAlias type="sesoc.global.vo.Users" alias="Users"/>
+   	  <typeAlias type="sesoc.global.vo.Items" alias="Items"/>
+   </typeAliases>
+   <mappers>
+      <mapper resource="mapper/boardmapper.xml"/>
+      <mapper resource="mapper/usersmapper.xml"/>
+      <mapper resource="mapper/gamemapper.xml"/>
+      <mapper resource="mapper/itemsmapper.xml"/>
+   </mappers>
+</configuration>

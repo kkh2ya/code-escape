@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sesoc.global.dao.GameDAO">
+
+<!-- 아이디와 비밀번호를 받아서 일치하는 객체를 반환해 준다. -->
+<select id="findItems" resultType="Items" parameterType="Items">
+  	SELECT
+  	slot1,
+  	slot2,
+  	slot3,
+  	slot4,
+  	slot5
+  	from items
+  	WHERE userid = #{userid}
+</select>
+
+<update id="updateItems" parameterType="Items">
+  	update Items set 
+  	slot1 = #{slot1},
+  	slot2 = #{slot2},
+  	slot3 = #{slot3},
+  	slot4 = #{slot4},
+  	slot5 = #{slot5}
+  	where userid = #{userid}
+</update>
+
+<update id="saveLevel" parameterType="Users">
+  	update users set 
+  	userlevel = #{userlevel}
+  	where id = #{id}
+</update>
+
+<select id="userInfo" resultType="Users" parameterType="Users">
+  	select
+  	id,
+  	nickname,
+  	email,
+  	userlevel
+  	from users
+  	where id = #{id}
+</select>
+
+<insert id="insertItems" parameterType="Users">
+	insert 
+	into 
+	items 
+	(userid) 
+	values 
+	(#{id})
+</insert>
+
+<delete id="deleteItems" parameterType="Users">
+	delete 
+	from 
+	items 
+	where 
+	userid = #{id}
+</delete>
+
+
+
+</mapper>
